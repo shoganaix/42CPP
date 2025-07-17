@@ -2,6 +2,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <cstring>
+#include <stdlib.h>
 
 void printMenu() {
     std::cout << "\n\033[1;32m***************************************\033[0m\n";
@@ -26,10 +27,12 @@ int main()
 
         if (prompt == "ADD") {
             std::cout << "\n✅ You selected \033[1;32mADD\033[0m.\n\n";
+            PhoneBook.addContact();
             // Call function to add contact
         }
         else if (prompt == "SEARCH") {
             std::cout << "\n🔍 You selected \033[1;34mSEARCH\033[0m.\n\n";
+            PhoneBook.displayContact();
             // Call function to search contacts
         }
         else if (prompt == "EXIT") {
@@ -40,5 +43,6 @@ int main()
             std::cout << "\n❌ \033[1;31mInvalid action!\033[0m Please enter ADD, SEARCH, or EXIT.\n";
         }
     }
+    system("clear");
     return 0;
 }
