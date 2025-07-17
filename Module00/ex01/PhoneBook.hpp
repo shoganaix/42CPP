@@ -1,3 +1,23 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
+#include <sstream>
+
+#include "Contact.hpp"
+
+class PhoneBook
+{
+    Contact contact[8];
+    int     contactIndex;
+
+    public:
+    PhoneBook(void);
+    ~PhoneBook(void);
+    
+    void addContact();
+    void displayContact();
+
+};
 /**
  * FOLLOW THE ORTHODOX CLASS FORM:
  * 
@@ -11,3 +31,5 @@
         };
  * 
  */
+
+ #endif

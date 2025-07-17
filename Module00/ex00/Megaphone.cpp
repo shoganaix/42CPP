@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring> //ASK PEOPLE IF THIS IS PROHIBITED
+#include <cstring>
 
 int main(int argc, char *argv[])
 {
@@ -24,15 +24,12 @@ int main(int argc, char *argv[])
 			{
 					c = std::toupper((argv[i][j]));
 					std::cout << c;
-
 			}
 
 		}
 		std::cout << std::endl;
 	}
 	else
-	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	}
 	return (0);
 }
