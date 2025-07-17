@@ -2,8 +2,9 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <cstring>
-#include <stdlib.h>
+#include <iomanip>
 #include <limits>  // para std::numeric_limits
+#include <stdlib.h>
 
 PhoneBook::PhoneBook(){
     contactIndex = 0;
@@ -38,7 +39,6 @@ PhoneBook::~PhoneBook() {
 	contact[contactIndex].setContact(firstName, lastName, nickName, phoneNumber, darkestSecret);
 	
     contactIndex = (contactIndex + 1) % 8;
-
     if (currentSize < 8)
         currentSize++;
  }
@@ -46,27 +46,38 @@ PhoneBook::~PhoneBook() {
 void PhoneBook::displayContact()
 {  
     if (currentSize  == 0) 
-		std::cout << "There are no saved contacts" << std::endl;
+        std::cout << "\n\033[1;33m⚠️  No contacts found.\033[0m Please add some contacts first.\n" << std::endl;
     else
     {
-        DisplayGraphic();
-        //...
+        DisplayTable();
+        //wait for prompt then DisplayInfo...
     }
 }
 
-void PhoneBook::DisplayGraphic()
+void PhoneBook::DisplayTable()
 {
     std::string firstName;
     std::string lastName;
     std::string nickName;
     int i = 0;
 
-    std::cout << "Index" << "|";
-	std::cout << "Firstname" << "|";
-	std::cout << "Lastname" << "|";
-	std::cout << "Nickname" << std::endl;
-	while (i < currentSize) {
-		std::cout << i << "|";
+    const std::string reset = "\033[0m";
+    const std::string cyan = "\033[36m";
+    const std::string yellow = "\033[33m";
+    const std::string magenta = "\033[35m";
+
+    std::cout << cyan << std::string(45, '-') << std::endl;
+
+    std::cout << "|" 
+        << std::setw(10) << "INDEX" << "|"
+        << std::setw(10) << "FIRST NAME" << "|"
+        << std::setw(10) << "LAST NAME" << "|"
+        << std::setw(10) << "NICK" << "|" << std::endl;
+
+    std::cout << std::string(45, '-') << reset  << std::endl;
+
+	while (i < currentSize)
+    {
 		firstName = this->contact[i].getFirstName();
 		lastName = this->contact[i].getLastName();
 		nickName = this->contact[i].getNickName();
@@ -76,9 +87,12 @@ void PhoneBook::DisplayGraphic()
 			lastName = lastName.substr(0, 9) + ".";
 		if (nickName.length() > 9)
 			nickName = nickName.substr(0, 9) + ".";
-		std::cout << firstName << "|";
-		std::cout << lastName << "|";
-		std::cout << nickName << std::endl;
+ 
+         std::cout << "|" 
+            << std::setw(10) << i << "|"
+            << std::setw(10) << firstName << "|"
+            << std::setw(10) << lastName << "|"
+            << std::setw(10) << nickName << "|" << std::endl;
 		i++;
-	}
+    }
 }

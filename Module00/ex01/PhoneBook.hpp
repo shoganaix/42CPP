@@ -20,7 +20,7 @@ class PhoneBook
     void addContact();
     //necesito que tenga un prompt pero el constructor tiene que estar avcio ??
     void displayContact();
-    void DisplayGraphic(); 
+    void DisplayTable(); 
 
 };
 /**
