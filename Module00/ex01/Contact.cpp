@@ -10,8 +10,6 @@ Contact::Contact() {
 Contact::~Contact() {
 }
 
-//void setContact(void)
-
 void Contact::setContact(std::string p_firstName, std::string p_lastName, std::string p_nickName,
                 std::string p_phoneNumber, std::string p_darkestSecret)
 {
@@ -34,7 +32,6 @@ std::string Contact::getLastName() const {
 std::string Contact::getNickName() const {
     return this->nickName;
 }
-
 
 std::string Contact::getPhoneNumber() const {
     return this->phoneNumber;

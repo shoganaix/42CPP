@@ -14,7 +14,6 @@ class Contact
     std::string nickName;
     std::string phoneNumber;
     std::string darkestSecret;
-
     //tienen que estar privados los atributos??
     
     public:
@@ -26,8 +25,7 @@ class Contact
 	std::string		getNickName() const;
 	std::string		getPhoneNumber() const;
 	std::string		getDarkestSecret() const;
-
-    //void setContact(void);
+    //por que const
 
     void setContact(std::string firstName, std::string lastName, std::string nickName,
                 std::string phoneNumber, std::string darkestSecret);

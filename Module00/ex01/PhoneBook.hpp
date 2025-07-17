@@ -18,11 +18,13 @@ class PhoneBook
     ~PhoneBook(void);
     
     void addContact();
-    //necesito que tenga un prompt pero el constructor tiene que estar avcio ??
+    //constructor debe estar vacio?
+    void displayInfo(int index, std::string prompt);
+    //puede recibir cosas no?
     void displayContact();
-    void DisplayTable(); 
-
+    void displayTable();
 };
+
 /**
  * FOLLOW THE ORTHODOX CLASS FORM:
  * 
