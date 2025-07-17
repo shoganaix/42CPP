@@ -1,11 +1,9 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <cstdlib>
 #include <iostream>
-#include <cstring>
 #include <iomanip>
-#include <cstdio>
 #include <limits>  // para std::numeric_limits, puedo??
-#include <unistd.h>
 
 PhoneBook::PhoneBook(){
     contactIndex = 0;
@@ -69,7 +67,7 @@ void PhoneBook::displayTable()
     std::cout << "|" << cyan << std::setw(10) << "INDEX"
               << "|" << std::setw(10) << "FIRST NAME"
               << "|" << std::setw(10) << "LAST NAME"
-              << "|" << std::setw(10) << "NICK" << reset 
+              << "|" << std::setw(10) << "NICKNAME" << reset 
               << "|"<< std::endl;
 
     std::cout << line << std::endl;

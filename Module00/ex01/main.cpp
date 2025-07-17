@@ -1,8 +1,6 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include <iostream>
-#include <cstring>
-#include <stdlib.h>
 
 void printMenu() {
     std::cout << "\n\033[1;32m******************************************\033[0m\n";
