@@ -6,11 +6,44 @@
 Each module consists of a series of exercises designed to reinforce and expand my knowledge of C++ programming concepts
 
 # Index
+* [Rules & Formatting](#Formatting)
 * [Modules](#Modules)
 * [Usage](#usage)
 * [Final Grade](#grade)
 
-## Modules
+## Formatting
+
+### The Orthodox Canonical Form
+
+``  class A final
+    {
+        public:
+            A ();
+            A (const A &a);
+            ~A ();
+            A & operator = (const A &a);
+    };
+``
+
+### UpperCamelCase format
+
+**Files containing class code will always be named according to the class name.**
+For instance:
+ClassName.hpp/ClassName.h, ClassName.cpp, or ClassName.tpp...
+
+### Forbidden
+- *printf(), *alloc() and free()
+
+- using namespace <ns_name>
+
+- STL only in Modules 08 and 09. Meaning:
+no Containers (vector/list/map, and so forth) and no Algorithm (<algorithm> header) until then
+
+- No function implementation in a header file
+
+- C++11 (and derived forms) and Boost libraries are forbidden
+
+ ## Modules
 
 ### Module 00
 **Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff...**
