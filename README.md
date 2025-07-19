@@ -15,13 +15,19 @@ Each module consists of a series of exercises designed to reinforce and expand m
 
 ### The Orthodox Canonical Form
 
+    Implement the four required member functions below:
+        • Default constructor
+        • Copy constructor
+        • Copy assignment operator
+        • Destructor
+
 ``  class A final
     {
         public:
             A ();
             A (const A &a);
-            ~A ();
             A & operator = (const A &a);
+            ~A ();
     };
 ``
 

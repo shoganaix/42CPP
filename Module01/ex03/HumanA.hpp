@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:26:35 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:20:28 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:36:57 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class HumanA
             no se reflejará en Human.
             */ 
     public:
-        HumanA(void); //tengo que dejar el coisntructor vacio?? //
         HumanA(std::string name, Weapon &weapon);
         ~HumanA(void);
 

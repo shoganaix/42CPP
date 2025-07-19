@@ -6,15 +6,12 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:34:43 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:20:08 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:43:26 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 #include "Weapon.hpp"
-
-HumanB::HumanB() { //
-} //
 
 HumanB::HumanB(std::string argName)
 {

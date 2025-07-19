@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:26:55 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:19:59 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/19 18:37:38 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class HumanB
         Weapon *weapon;
     
     public:
-        HumanB(void); //
         HumanB(std::string name);
         ~HumanB(void);
 
