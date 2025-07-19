@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:17:07 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/18 17:39:01 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/19 18:21:11 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@
 
 class Zombie
 {
-    std::string name;
+        std::string name;
     
     public:
-    Zombie(void);
-    Zombie(std::string name);
-    ~Zombie(void);
+        Zombie(void);
+        ~Zombie(void);
 
-    void    announce(void);
-    void    setName(std::string name);
-
+        void    announce(void);
+        void    setName(std::string name); 
+        //por que tengo que hacere un setter y no puedo utilizar zombie(name) ??
 };
 
 Zombie* zombieHorde(int N, std::string name);

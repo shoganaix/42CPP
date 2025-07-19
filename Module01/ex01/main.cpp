@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:16:35 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/18 17:42:17 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/19 15:38:48 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,4 @@ int	main()
 {
     Zombie* horde = zombieHorde(5, "ooF");
     delete[] horde;
-    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:16:30 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/18 13:16:31 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/18 14:00:57 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ class PhoneBook
     public:
     PhoneBook(void);
     ~PhoneBook(void);
-    
+        //constructor debe estar vacio?
+
     void addContact();
-    //constructor debe estar vacio?
     void displayInfo(int index, std::string prompt);
     //puede recibir cosas no?
     void displayContact();

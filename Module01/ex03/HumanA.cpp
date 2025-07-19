@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 13:17:04 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:22:48 by usuario          ###   ########.fr       */
+/*   Created: 2025/07/19 14:25:57 by usuario           #+#    #+#             */
+/*   Updated: 2025/07/19 18:20:34 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
 
-//Zombie::Zombie(){
-//}
+HumanA::HumanA() { //
+} //
 
-Zombie::Zombie(std::string argName)
+HumanA::HumanA(std::string argName, Weapon &argWeapon) 
 {
     this->name = argName;
-    std::cout <<"ZoooombieeE " << this->name << " AliiiivE, MooorrE BraiiinnzZ..." << std::endl;
+    this->weapon = &argWeapon;
 }
 
-Zombie::~Zombie()
-{
-    std::cout <<"ZoooombieeE " << this->name << " DeeeaaD, No MooorrE BraiiinnzZ..." << std::endl;
+HumanA::~HumanA() {
 }
 
-void Zombie:: announce()
+void HumanA::attack(void)
 {
-        std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    if (this->weapon)
+        std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
+    else
+        std::cout << this->name << " has no weapon!" << std::endl;
 }

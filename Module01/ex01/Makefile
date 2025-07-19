@@ -1,4 +1,4 @@
-NAME	 = zombie
+NAME	 = ex01
 
 CPP		 = c++
 STD		 = -std=c++98

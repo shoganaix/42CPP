@@ -1,4 +1,4 @@
-NAME	 = ex00
+NAME	 = ex04
 
 CPP		 = c++
 STD		 = -std=c++98
@@ -11,7 +11,8 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRCS	 = main.cpp
+		   
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf

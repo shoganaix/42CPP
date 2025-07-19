@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 13:17:04 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 15:38:53 by usuario          ###   ########.fr       */
+/*   Created: 2025/07/19 17:41:26 by usuario           #+#    #+#             */
+/*   Updated: 2025/07/19 18:17:51 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie::Zombie(){
-}
+int main()
+{
+    std::string debug = "DEBUG";
+    std::string info = "INFO";
+    std::string warning = "WARNING";
+    std::string error = "ERROR";
 
-Zombie::~Zombie()
-{
-    std::cout <<"ZoooombieeE " << this->name << " DeeeaaD, No MooorrE BraiiinnzZ..." << std::endl;
-}
-void Zombie:: setName(std::string setName)
-{
-    this->name = setName;
-}
-void Zombie:: announce()
-{
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    Harl bot;
+    bot.complain(debug);
+    bot.complain(info);
+    bot.complain(warning);
+    bot.complain(error);
+
+    return(0);
 }

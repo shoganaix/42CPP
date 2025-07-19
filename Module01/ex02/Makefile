@@ -1,4 +1,4 @@
-NAME	 = address
+NAME	 = ex02
 
 CPP		 = c++
 STD		 = -std=c++98
