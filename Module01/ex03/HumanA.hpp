@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:26:35 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:36:57 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/22 16:37:18 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class HumanA
 {
         std::string name;
-        Weapon *weapon;
+        Weapon &weapon;
             //Weapon weapon; 
             /*
             no puede ser asi porque se guarda una copia interna de
