@@ -1,4 +1,4 @@
-NAME	 = ex00
+NAME	 = ex01
 
 CPP		 = c++
 STD		 = -std=c++98
@@ -11,7 +11,7 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongDog.cpp
+SRCS	 = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongDog.cpp Brain.cpp
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf

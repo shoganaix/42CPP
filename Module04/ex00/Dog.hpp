@@ -3,29 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:44:40 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/22 00:45:34 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/23 15:32:39 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.h"
+#include "Animal.hpp"
 
 class Dog : public Animal
 {
-        std::string type;
-
     public:
         Dog(void);
-        Dog(Animal const &dog);
+        Dog(Dog const &dog);
         Dog& operator=(const Dog& dog);
         ~Dog(void);
 
-		void    makeSound();
+        void makeSound() const;
 };
 
 #endif
