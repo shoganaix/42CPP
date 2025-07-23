@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 18:49:22 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/21 19:15:08 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/23 14:56:39 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@ ClapTrap::ClapTrap()
     std::cout << "ClapTrap Empty Constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string argName)
+ClapTrap::ClapTrap(std::string argName) : name(argName), health(10), energy(10), damage(0)
 { 
     std::cout << "ClapTrap Constructor called." << std::endl;
     
-    this->name = argName;
-    this->health = 10;
-    this->energy = 10;
-    this->damage = 0;
-
     std::cout << "A new ClapTrap " << this->name << " is born :)" << std::endl;
 
     std::cout << "Starts with " << this->health << " hit points." << std::endl;
