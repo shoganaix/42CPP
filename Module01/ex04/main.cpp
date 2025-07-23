@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 16:14:47 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/22 16:38:50 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/23 14:48:41 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 *           Opens the file for reading (in), writing (out), and appending at the end (app).
 *           If the file does not exist, it will be created.
 *
-*       -> infile.is_open(): //
+*       -> infile.is_open():
 *           Checks if the file was successfully opened.
 *           Returns true if it's open, or false if there was an error.
 *       -> infile.close(): 

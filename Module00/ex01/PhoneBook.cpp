@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:16:27 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/18 13:16:28 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/23 14:50:42 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include <limits>  // para std::numeric_limits, puedo??
+#include <limits>
 
 PhoneBook::PhoneBook(){
     contactIndex = 0;
@@ -33,7 +33,13 @@ PhoneBook::~PhoneBook() {
     std::string phoneNumber;
     std::string darkestSecret;
 
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Limpia buffer
+    /*
+     * I think this line may cause some issues on buffer,
+     * especially when printing index when 8 contacts added
+     * CHECK LATER  
+     */
+    
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << "Type a name: ";
     while (std::getline(std::cin, firstName) && firstName.empty())
@@ -138,7 +144,7 @@ void PhoneBook::displayContact()
             + std::string(10, '-') + "+" << std::endl;
 
         std::cout << std::endl << "\n🔍 Type an\033[1;34m index\033[0m to obtain more information: ";
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //limpia buffer nose pk se ensusia
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
         std::getline(std::cin, prompt);
         int index = atoi(prompt.c_str());
         displayInfo(index, prompt);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
+/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 13:17:07 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/19 18:35:45 by usuario          ###   ########.fr       */
+/*   Updated: 2025/07/23 14:47:37 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@ class Zombie
         Zombie(std::string name);
         ~Zombie(void);
 
-        void announce(void); // tiene que estar priv??
-
-        //Zombie* newZombie(std::string name);
-        //void randomChump(std::string name);
-
-        //los he puesto fuera porque son archivos aparte pero he visto que la gente los define dentro??
+        void announce(void);
 };
 
 Zombie* newZombie(std::string name);
