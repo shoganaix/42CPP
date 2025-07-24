@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:26:00 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/23 17:33:42 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:07:29 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,28 @@ Brain::Brain()
 
 Brain::Brain(const Brain& brain)
 {
-    *this = brain;
     std::cout << "\033[33mBrain\033[0m Copy Constructor called" << std::endl;
+     *this = brain;
 }
 
 Brain& Brain::operator=(const Brain& brain)
 {
-    if (this != &brain)
-        *this = brain;
+ if (this != &brain)
+    {
+        for (int i = 0; i < 100; ++i)
+            ideas[i] = brain.ideas[i];
+    }
     return *this;
 }
+    /*
+    *
+    * if (this != &brain)
+    *    *this = brain;  
+    * return *this;
+    * 
+    *  ⚠️ *this = brain -> ¡Esto vuelve a llamar al mismo operador!
+    * 💥  -> Llamada recursiva infinita
+    */
 
 Brain::~Brain()
 {

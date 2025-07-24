@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 18:49:07 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/24 14:22:06 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:17:38 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 int main()
 {
+    std::cout << "\n\033[1;33m----- Creation -----\033[0m" << std::endl;
     const Animal* a = new Animal();
     std::cout << std::endl;
     const Animal* dr = new Animal("Dragon");
@@ -31,7 +32,7 @@ int main()
     const WrongAnimal* wc = new WrongCat();
     std::cout << std::endl;
 
-    std::cout << std::endl;
+    std::cout << "\n\033[1;33m----- Animals show their type -----\033[0m" << std::endl;
     std::cout << "Animal 'a' is a \033[33m" << a->getType() << "\033[0m!" << std::endl;
     if (a->getType() == "")
         std::cout << "\033[33m*unidentifiable sounds*\033[0m wait a minute... what?" << std::endl;
@@ -42,7 +43,7 @@ int main()
     std::cout << "Animal 'wc' is a \033[33m" << wc->getType() << "\033[0m!" << std::endl;
     std::cout <<  std::endl;
 
-
+    std::cout << "\n\033[1;33m----- Animals make sounds -----\033[0m" << std::endl;
     a->makeSound();
     std::cout << std::endl;    
     dr->makeSound();
@@ -56,7 +57,7 @@ int main()
     wc->makeSound();
     std::cout << std::endl;
 
-    std::cout << std::endl;
+    std::cout << "\n\033[1;33m----- Desroy -----\033[0m" << std::endl;
     delete a;
     std::cout << std::endl;
     delete dr; 

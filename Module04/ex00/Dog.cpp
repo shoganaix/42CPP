@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:16:26 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 14:18:56 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:42:09 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Dog::Dog()
 {
-    type = "Dog";
     std::cout << "\033[33mDog\033[0m Constructor called" << std::endl;
+    type = "Dog";
 }
 
 Dog::Dog(Dog const &dog)

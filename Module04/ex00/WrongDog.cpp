@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:16:26 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 14:24:05 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:29:41 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 WrongDog::WrongDog()
 {
-    type = "WrongDog";
     std::cout << "\033[33mWrongDog\033[0m Constructor called" << std::endl;
+    type = "WrongDog";
 }
 
 WrongDog::WrongDog(WrongDog const &wrongDog)

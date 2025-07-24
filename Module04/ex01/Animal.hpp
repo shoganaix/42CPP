@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:24 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/23 15:41:34 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:35:57 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Animal
 {
     protected:
         std::string type;
-
+    
     public:
         Animal(void);
         Animal(std::string type);

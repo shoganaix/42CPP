@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:16:26 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/23 16:48:50 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:24:05 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongDog::WrongDog(WrongDog const &wrongDog)
 
 WrongDog& WrongDog::operator=(const WrongDog& wrongDog)
 {
-    Animal::operator=(wrongDog);
+    WrongAnimal::operator=(wrongDog);
     return *this;
 }
 

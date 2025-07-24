@@ -11,7 +11,7 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongDog.cpp Brain.cpp
+SRCS	 = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongDog.cpp WrongAnimal.cpp Brain.cpp
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf

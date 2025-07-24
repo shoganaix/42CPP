@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:11:21 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/23 17:28:10 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:41:13 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 class Brain
 {
-    //protected:
         std::string ideas[100];
     public:
         Brain(void);

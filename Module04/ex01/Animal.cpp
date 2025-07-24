@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:20 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/23 17:03:16 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:29:01 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ Animal::Animal(std::string type) : type(type)
 
 Animal::Animal(const Animal& animal)
 {
-    *this = animal;
     std::cout << "Animal Copy Constructor called" << std::endl;
+    *this = animal;
 }
 
 Animal& Animal::operator=(const Animal& animal)

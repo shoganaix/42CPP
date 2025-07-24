@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:20 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/24 15:29:29 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:40:10 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ WrongAnimal::WrongAnimal(std::string type) : type(type)
 
 WrongAnimal::WrongAnimal(const WrongAnimal& wrongAnimal)
 {
-    std::cout << "WrongAnimal Copy Constructor called" << std::endl;
     *this = wrongAnimal;
+    std::cout << "WrongAnimal Copy Constructor called" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& wrongAnimal)
