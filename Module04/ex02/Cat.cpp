@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 15:28:11 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 14:18:36 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/23 17:35:46 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 Cat::Cat()
 {
-    type = "Cat";
     std::cout << "\033[33mCat\033[0m Constructor called" << std::endl;
+    type = "Cat";
+    brain = new Brain();
 }
 
 Cat::Cat(Cat const &cat)
@@ -32,6 +33,7 @@ Cat& Cat::operator=(const Cat& cat)
 
 Cat::~Cat() 
 {
+    delete brain;
     std::cout << "\033[33mCat\033[0m Destructor called" << std::endl;
 }
 

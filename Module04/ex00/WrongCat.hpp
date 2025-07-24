@@ -6,16 +6,16 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:44:28 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/23 16:31:30 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:23:53 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
 #define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class WrongCat : public Animal
+class WrongCat : public WrongAnimal
 {
     public:
         WrongCat(void);

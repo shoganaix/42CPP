@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:36:22 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 14:19:48 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/23 16:50:59 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ WrongCat::WrongCat(WrongCat const &wrongCat)
 
 WrongCat& WrongCat::operator=(const WrongCat& wrongCat)
 {
-    WrongAnimal::operator=(wrongCat);
+    Animal::operator=(wrongCat);
     return *this;
 }
 

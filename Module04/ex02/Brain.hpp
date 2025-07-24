@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 00:44:40 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/24 14:23:58 by msoriano         ###   ########.fr       */
+/*   Created: 2025/07/23 17:11:21 by msoriano          #+#    #+#             */
+/*   Updated: 2025/07/23 17:28:10 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGDOG_HPP
-#define WRONGDOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "WrongAnimal.hpp"
+#include <iostream>
 
-class WrongDog : public WrongAnimal
+class Brain
 {
+    //protected:
+        std::string ideas[100];
     public:
-        WrongDog(void);
-        WrongDog(WrongDog const &wrongdog);
-        WrongDog& operator=(const WrongDog& wrongdog);
-        ~WrongDog(void);
-
-        void makeSound() const;
+        Brain(void);
+        Brain(Brain const &brain);
+        Brain& operator=(const Brain& brain);
+        ~Brain(void);
 };
 
 #endif

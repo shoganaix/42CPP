@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 18:49:07 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/23 16:57:00 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/07/24 14:22:06 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int main()
     std::cout << std::endl;
     const Animal* c = new Cat();
     std::cout << std::endl;
-    const Animal* wd = new WrongDog();
+    const WrongAnimal* wd = new WrongDog();
     std::cout << std::endl;
-    const Animal* wc = new WrongCat();
+    const WrongAnimal* wc = new WrongCat();
     std::cout << std::endl;
 
     std::cout << std::endl;

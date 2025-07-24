@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongDog.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 00:44:40 by usuario           #+#    #+#             */
-/*   Updated: 2025/07/24 14:23:58 by msoriano         ###   ########.fr       */
+/*   Created: 2025/07/22 00:37:24 by usuario           #+#    #+#             */
+/*   Updated: 2025/07/24 14:27:44 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGDOG_HPP
-#define WRONGDOG_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include "WrongAnimal.hpp"
+#include <iostream>
 
-class WrongDog : public WrongAnimal
+class WrongAnimal
 {
+    protected:
+        std::string type;
+    
     public:
-        WrongDog(void);
-        WrongDog(WrongDog const &wrongdog);
-        WrongDog& operator=(const WrongDog& wrongdog);
-        ~WrongDog(void);
+        WrongAnimal(void);
+        WrongAnimal(std::string type);
+        WrongAnimal(WrongAnimal const &wrongAnimal);
+        WrongAnimal& operator=(const WrongAnimal& wrongAnimal);
+        ~WrongAnimal(void);
+
+        void setType(std::string type);
+        const std::string getType() const;
 
         void makeSound() const;
 };
