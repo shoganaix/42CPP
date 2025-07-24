@@ -19,8 +19,8 @@ RM		 = /bin/rm -rf
 all:		$(NAME) 
 
 ${NAME}:	${OBJS}
-			@echo "$(YELLOW)LInking: $<$(RESET)"
-			${CPP} $(OBJS) -o $@
+			@echo "$(YELLOW)Linking: $<$(RESET)"
+			${CPP} $(CPPFLAGS) $(OBJS) -o $@
 
 %.o: %.cpp
 			@echo "$(BLUE)Compiling: $<$(RESET)"
