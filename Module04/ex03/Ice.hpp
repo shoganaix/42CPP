@@ -6,14 +6,13 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:16:34 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 18:27:55 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/09/10 19:47:21 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
 
 class Ice : public AMateria
@@ -24,7 +23,7 @@ class Ice : public AMateria
         Ice& operator=(const Ice& ice);
         ~Ice(void);
 
-        Ice* clone() const;
+        virtual Ice* clone() const;
         void use(ICharacter& target);
 
 };

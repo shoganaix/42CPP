@@ -6,14 +6,14 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:05:25 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 19:52:19 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/09/10 19:28:33 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
-#include "IMateriaSource.hpp"
-#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "Character.hpp"
 
 int main()
 {
@@ -29,6 +29,8 @@ int main()
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    std::cout << std::endl;
+
     delete bob;
     delete me;
     delete src;

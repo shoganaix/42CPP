@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:11:05 by msoriano          #+#    #+#             */
-/*   Updated: 2025/07/24 19:48:24 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/09/10 19:34:20 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ AMateria::AMateria()
 AMateria::AMateria(std::string const & type)
 {
     std::cout << "\033[33m" << type << "\033[0m AMateria Constructor() called" << std::endl;
+    this->type = type;
 }
 
 AMateria::AMateria(const AMateria& aMateria)
@@ -30,7 +31,9 @@ AMateria::AMateria(const AMateria& aMateria)
 
 AMateria& AMateria::operator=(const AMateria& aMateria)
 {
-    //
+    std::cout << "AMateria Operator called" << std::endl;
+    this->type = aMateria.type;
+    return *this;
 }
 
 AMateria::~AMateria()
@@ -39,15 +42,5 @@ AMateria::~AMateria()
 }
 std::string const & AMateria::getType() const
 {
-    //
-}
-
-AMateria* AMateria::clone() const
-{
-    //
-}
-
-void AMateria::use(ICharacter& target)
-{
-    //
+    return(this->type);
 }
