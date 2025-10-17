@@ -11,7 +11,7 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp AMateria.cpp Ice.cpp Cure.cpp ICharacter.cpp IMateriaSource.cpp
+SRCS	 = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp ICharacter.cpp IMateriaSource.cpp
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf

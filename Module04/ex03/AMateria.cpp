@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:11:05 by msoriano          #+#    #+#             */
-/*   Updated: 2025/09/10 19:34:20 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:04:53 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,31 @@
 
 AMateria::AMateria()
 {
-    std::cout << "AMateria Constructor called" << std::endl;
+    std::cout << GREEN << "AMateria Constructor called" << RESET<< std::endl;
 }
 
 AMateria::AMateria(std::string const & type)
 {
-    std::cout << "\033[33m" << type << "\033[0m AMateria Constructor() called" << std::endl;
+    std::cout << GREEN << type << "AMateria Constructor() called" << RESET << std::endl;
     this->type = type;
 }
 
 AMateria::AMateria(const AMateria& aMateria)
 {
-    std::cout << "AMateria Copy Constructor called" << std::endl;
+    std::cout << GREEN << "AMateria Copy Constructor called" << RESET << std::endl;
     *this = aMateria;
 }
 
 AMateria& AMateria::operator=(const AMateria& aMateria)
 {
-    std::cout << "AMateria Operator called" << std::endl;
+    std::cout << YELLOW << "AMateria Operator called" << RESET << std::endl;
     this->type = aMateria.type;
     return *this;
 }
 
 AMateria::~AMateria()
 {
-    std::cout << "AMateria Destructor called" << std::endl;
+    std::cout << RED << "AMateria Destructor called" << RESET << std::endl;
 }
 std::string const & AMateria::getType() const
 {

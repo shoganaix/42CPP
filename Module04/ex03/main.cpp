@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:05:25 by msoriano          #+#    #+#             */
-/*   Updated: 2025/09/10 19:28:33 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:48:32 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
+#include "ICharacter.hpp"
 #include "Character.hpp"
 
 int main()

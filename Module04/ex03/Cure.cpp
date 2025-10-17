@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:14:52 by msoriano          #+#    #+#             */
-/*   Updated: 2025/09/10 19:41:42 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/10/17 18:05:24 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Cure::Cure()
 {
-    std::cout << "Cure Constructor called" << std::endl;
+    std::cout << GREEN << "Cure Constructor called" << RESET << std::endl;
     type = "cure";
 }
-Cure::Cure(const Cure& cure)
+Cure::Cure(const Cure& cure): AMateria(cure)
 {
-    std::cout << "Cure Copy Constructor called" << std::endl;
+    std::cout << GREEN << "Cure Copy Constructor called" << RESET << std::endl;
     *this = cure;
 }
 
 Cure& Cure::operator=(const Cure& cure)
 {
-    std::cout << "Cure Operator called" << std::endl;
+    std::cout << YELLOW << "Cure Operator called" << RESET << std::endl;
     //Cure::operator=(cure);
     this->type = cure.type;
     return *this;
@@ -33,7 +33,7 @@ Cure& Cure::operator=(const Cure& cure)
 
 Cure::~Cure()
 {
-    std::cout << "Cure Destructor called" << std::endl;
+    std::cout << RED << "Cure Destructor called" << RESET << std::endl;
 }
 
 Cure* Cure::clone() const
