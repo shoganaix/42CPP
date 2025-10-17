@@ -35,23 +35,16 @@ class Bureaucrat
         void increment();
         void decrement();
 
-        // Excepciones
         class GradeTooHighException : public std::exception 
         {
             public:
-                const char* what() const throw() 
-                {
-                    return ("\033[31mGrade too high! Maximum is 150.\033[0m");
-                }
+                const char* what() const throw();
         };
 
         class GradeTooLowException : public std::exception
         {
             public:
-                const char* what() const throw()
-                {
-                    return ("\033[31mGrade too low! Minimum is 1.\033[0m");
-                }
+                const char* what() const throw();
         };
 };
 
