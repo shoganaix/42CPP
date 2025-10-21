@@ -1,4 +1,4 @@
-NAME	 = ex01
+NAME	 = ex02
 
 CPP		 = c++
 STD		 = -std=c++98
@@ -11,7 +11,8 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp Bureaucrat.cpp Form.cpp
+SRCS	 = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf
