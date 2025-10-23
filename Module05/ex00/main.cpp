@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 18:49:07 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/17 20:52:13 by root             ###   ########.fr       */
+/*   Updated: 2025/10/23 18:02:39 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int main()
         std::cout << tom;
         tom.decrement();
         std::cout << tom;
-        std::cout <<" Everything went fine" << std::endl;
-
+        std::cout << "\033[32mEverything went fine \033[0m" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -38,6 +37,7 @@ int main()
         std::cout << alice;
         alice.increment();
         std::cout << alice;
+        std::cout << "\033[32mEverything went fine \033[0m" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -56,7 +56,7 @@ int main()
         std::cout << alice;
         alice.decrement();
         std::cout << alice;
-        std::cout <<" Everything went fine" << std::endl;
+        std::cout << "\033[32mEverything went fine \033[0m" << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -80,7 +80,7 @@ int main()
         alice.setName("Alisson");
         alice.setGrade(10);
         std::cout << alice;
-        std::cout <<"---------->Everything went fine<----------" << std::endl;
+        std::cout << "\033[32mEverything went fine \033[0m" << std::endl;
     }
     catch(const std::exception& e)
     {

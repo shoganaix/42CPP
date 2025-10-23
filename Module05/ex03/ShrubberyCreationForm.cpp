@@ -6,26 +6,26 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:19:04 by root              #+#    #+#             */
-/*   Updated: 2025/10/23 18:04:50 by root             ###   ########.fr       */
+/*   Updated: 2025/10/23 18:00:25 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm():Aform::Aform("ShrubberyCreationForm", false, 145, 137), target_file()
+ShrubberyCreationForm::ShrubberyCreationForm():AForm::AForm("ShrubberyCreationForm", false, 145, 137), target_file()
 {
     std::cout << "ShrubberyCreationForm Constructor called" << std::endl;
     std::cout << "\033[33mUndefined shrubberyCreationForm \033[0m created" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Aform::Aform("ShrubberyCreationForm", false, 145, 137), target_file(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): AForm::AForm("ShrubberyCreationForm", false, 145, 137), target_file(target)
 {
     //
     std::cout << "ShrubberyCreationForm Constructor() called" << std::endl;
     std::cout << "\033[33m" << getName() << " \033[32m" << getTarget() << "\033[0m created" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): Aform::Aform(copy), target_file(copy.target_file)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): AForm::AForm(copy), target_file(copy.target_file)
 {
     std::cout << "ShrubberyCreationForm Copy Constructor called" << std::endl;
     *this = copy;
@@ -33,7 +33,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy):
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm &copy)
 {
-    Aform::operator=(copy);
+    AForm::operator=(copy);
     this->target_file = copy.target_file;
     return *this;
 }
@@ -67,6 +67,13 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	outfile << TREE;
 	outfile.close();
 	std::cout << "Bureaucrat \033[33m" << executor.getName() << "\033[0m executed and created \033[33m" << this->target_file << "_shrubbery\033[0m form" << std::endl;
+}
+
+AForm	*ShrubberyCreationForm::makeForm(AForm *form, std::string const &name, std::string const &target)
+{
+	if (form == NULL && name == "Shrubbery")
+		return (new ShrubberyCreationForm(target));
+	return (form);
 }
 
 std::ostream& operator <<(std::ostream &str, const ShrubberyCreationForm &copy) 

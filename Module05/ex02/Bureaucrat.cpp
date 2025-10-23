@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
     else if (grade > 150)
         throw GradeTooLowException();
     this->grade = grade;
-    std::cout << "\033[33m" << name << "\033[0m is born" << std::endl;
+    std::cout << "\033[32m" << name << "\033[0m is born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
@@ -48,7 +48,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat Destructor called" << std::endl;
-    std::cout << "\033[33m" << name << "\033[0m is now dead." << std::endl;
+    std::cout << "\033[32m" << name << "\033[0m is now dead." << std::endl;
 }
 
 const std::string Bureaucrat::getName() const
@@ -96,25 +96,23 @@ void Bureaucrat::signForm(Aform &form)
 
 void Bureaucrat::executeForm(Aform &form)
 {
-    try
-    {
+    if(form.getIsSigned() == true && form.getExecgrade() >= this->getGrade())
         form.execute(*this);
-        std::cout << "Bureaucrat \033[33m" << this->name << "\033[0m executed \033[33m" << form.getName() << "\033[0m form" << std::endl;
-    }
-    catch(const std::exception& e)
+    else
     {
-        std::cout << "Bureaucrat \033[33m" << this->name << "\033[0m couldn't execute \033[33m" << form.getName() << "\033[0m form because "  << e.what() << std::endl;
+        std::cout << "Bureaucrat \033[33m" << this->name << "\033[1;31m couldn't\033[0m execute \033[33m" << form.getName() << "\033[0m because \033[33mtheir grade is too low\033[0m"  << std::endl;
+        throw GradeTooLowException();
     }
 }
 
-char const	*Bureaucrat::GradeTooHighException::what() const throw()
+char const *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("\033[31mGrade too high! Maximum is 150.\033[0m");
+    return ("\033[31m[Bureaucrat] Bureaucrat grade is too high!\033[0m");
 }
 
-char const	*Bureaucrat::GradeTooLowException::what() const throw()
+char const *Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("\033[31mGrade too low! Minimum is 1.\033[0m");
+    return ("\033[31m[Bureaucrat] Bureaucrat grade is too low!\033[0m");
 }
 
 std::ostream& operator <<(std::ostream &str, const Bureaucrat &bureaucrat) 

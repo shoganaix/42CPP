@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:24 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/21 19:47:43 by root             ###   ########.fr       */
+/*   Updated: 2025/10/23 18:04:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ class Aform
         void beExecuted(Bureaucrat const &bureaucrat);
         virtual void execute(Bureaucrat const &executor) const = 0;
 
-        class GradeTooHighException : public std::exception 
+        class FormGradeTooHighException : public std::exception 
         {
             public:
                 const char* what() const throw();
         };
 
-        class GradeTooLowException : public std::exception
+        class FormGradeTooLowException : public std::exception
         {
             public:
                 const char* what() const throw();

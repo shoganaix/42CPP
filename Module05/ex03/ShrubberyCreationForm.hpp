@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:19:01 by root              #+#    #+#             */
-/*   Updated: 2025/10/23 18:04:51 by root             ###   ########.fr       */
+/*   Updated: 2025/10/23 17:44:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,9 @@
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⡿⠛⠻⣿⣍⠛⠿⣿⣿⣷⣶⣶⣤⡀               |、˜〵\n" \
 "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠿⠿⠿⠛⠋⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠈⠹⠟⠂               じしˍ,)ノ"
 
-class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm: public Aform
+class ShrubberyCreationForm: public AForm
 {
     private:
         std::string   target_file;
@@ -80,6 +79,7 @@ class ShrubberyCreationForm: public Aform
         std::string  getTarget() const;
 
         void execute(Bureaucrat const &executor) const;
+        static AForm *makeForm(AForm *form, std::string const &name, std::string const &target);
 };
 
 std::ostream	&operator<<(std::ostream &str, ShrubberyCreationForm const &aform);

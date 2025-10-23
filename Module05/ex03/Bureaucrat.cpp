@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
     else if (grade > 150)
         throw GradeTooLowException();
     this->grade = grade;
-    std::cout << "\033[33m" << name << "\033[0m is born" << std::endl;
+    std::cout << "\033[32m" << name << "\033[0m is born" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat)
@@ -48,7 +48,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &bureaucrat)
 Bureaucrat::~Bureaucrat()
 {
     std::cout << "Bureaucrat Destructor called" << std::endl;
-    std::cout << "\033[33m" << name << "\033[0m is now dead." << std::endl;
+    std::cout << "\033[32m" << name << "\033[0m is now dead." << std::endl;
 }
 
 const std::string Bureaucrat::getName() const
@@ -66,7 +66,6 @@ int Bureaucrat::getGrade() const
     return grade;
 }
 
-//Handle exceptions from here! 
 void Bureaucrat::setGrade(int grade)
 {
     if (grade < 1)
@@ -90,19 +89,30 @@ void Bureaucrat::decrement()
     this->grade++;
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
     form.beSigned(*this);
 }
 
-char const	*Bureaucrat::GradeTooHighException::what() const throw()
+void Bureaucrat::executeForm(AForm &form)
 {
-    return ("\033[31m[Bureaucrat] Grade too high!\033[0m");
+    if(form.getIsSigned() == true && form.getExecgrade() >= this->getGrade())
+        form.execute(*this);
+    else
+    {
+        std::cout << "Bureaucrat \033[33m" << this->name << "\033[1;31m couldn't\033[0m execute \033[33m" << form.getName() << "\033[0m because \033[33mtheir grade is too low\033[0m"  << std::endl;
+        throw GradeTooLowException();
+    }
 }
 
-char const	*Bureaucrat::GradeTooLowException::what() const throw()
+char const *Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("\033[31m[Bureaucrat] Grade too low!\033[0m");
+    return ("\033[31m[Bureaucrat] Bureaucrat grade is too high!\033[0m");
+}
+
+char const *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("\033[31m[Bureaucrat] Bureaucrat grade is too low!\033[0m");
 }
 
 std::ostream& operator <<(std::ostream &str, const Bureaucrat &bureaucrat) 

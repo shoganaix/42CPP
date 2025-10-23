@@ -92,12 +92,12 @@ void Bureaucrat::decrement()
 
 char const	*Bureaucrat::GradeTooHighException::what() const throw()
 {
-    return ("\033[31mGrade too high! Maximum is 150.\033[0m");
+    return ("\033[31m[Bureaucrat] Grade too high! Maximum is 150.\033[0m");
 }
 
 char const	*Bureaucrat::GradeTooLowException::what() const throw()
 {
-    return ("\033[31mGrade too low! Minimum is 1.\033[0m");
+    return ("\033[31m[Bureaucrat] Grade too low! Minimum is 1.\033[0m");
 }
 
 std::ostream& operator <<(std::ostream &str, const Bureaucrat &bureaucrat) 
