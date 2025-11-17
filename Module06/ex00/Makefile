@@ -1,4 +1,4 @@
-NAME	 = ex00
+NAME	 = convert
 
 CPP		 = c++
 STD		 = -std=c++98
@@ -11,7 +11,7 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp 
+SRCS	 = main.cpp ScalarConverter.cpp
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf
