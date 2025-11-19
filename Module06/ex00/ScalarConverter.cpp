@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:18:07 by root              #+#    #+#             */
-/*   Updated: 2025/11/17 23:36:38 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/11/19 14:50:16 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,7 @@ void ScalarConverter::convert(const std::string &representation)
     }
     else if (isChar(representation))
     {
-        //demotion cast??
-        char value = static_cast<char>(representation[0]);
+        char value = representation[0];
         if (std::isprint(value))
             std::cout << "char: '" << value << "'" << std::endl;
          else
@@ -115,8 +114,7 @@ void ScalarConverter::convert(const std::string &representation)
             std::cout << "char: impossible" << std::endl;
         else
             {
-                //demotion cast
-                char c = static_cast<char>(value);
+                char c = value;
                 if (std::isprint(c))
                     std::cout << "char: '" << c << "'" << std::endl;
                  else
@@ -137,13 +135,12 @@ void ScalarConverter::convert(const std::string &representation)
     }
     else if (isFloat(representation))
     {
-        float value = std::strtold(representation.c_str(), NULL);
+        float value = std::strtof(representation.c_str(), NULL);
         if (value < 0 || value > 127)
             std::cout << "char: impossible" << std::endl;
         else
             {
-                //demotion cast
-                char c = static_cast<char>(value);
+                char c = value;
                 if (std::isprint(c))
                     std::cout << "char: '" << c << "'" << std::endl;
                  else
@@ -164,13 +161,12 @@ void ScalarConverter::convert(const std::string &representation)
     }
     else if (isDouble(representation))
     {
-        double value = std::strtold(representation.c_str(), NULL);
+        double value = std::strtod(representation.c_str(), NULL);
         if (value < 0 || value > 127)
             std::cout << "char: impossible" << std::endl;
         else
             {
-                //demotion cast
-                char c = static_cast<char>(value);
+                char c = value;
                 if (std::isprint(c))
                     std::cout << "char: '" << c << "'" << std::endl;
                  else
@@ -192,3 +188,27 @@ void ScalarConverter::convert(const std::string &representation)
     else
         std::cout << "Error: invalid parameter" << std::endl;
 }
+
+// static_cast:
+// ----------------------------------------------
+// We use static_cast to convert a value from one type to another in a safe, well-defined way
+// We do NOT static cast for demotion cases
+
+
+// std::strtol, std::strtod, std::strtof, std::strtold:
+// ----------------------------------------------
+// These functions convert strings to numeric values.
+//   - std::strtol   : string → long
+//   - std::strtod   : string → double
+//   - std::strtof   : string → float
+//   - std::strtold  : string → long double
+//
+// They provide a way to check if the conversion succeeded as a char*
+//   long value = std::strtol(str, &endptr, 10);
+//   if (*endptr != '\0') -> conversion failed / extra characters found
+
+
+// std::numeric_limits<T>::min()/max():
+// --------------------------------------------
+// This is used to check the range of numeric types in C++ (gives us max int/float...)
+// If it doesn't fit, we print "impossible"
