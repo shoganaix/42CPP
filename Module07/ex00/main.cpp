@@ -6,7 +6,7 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:00:59 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/28 17:57:07 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:00:52 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,28 @@
 //     std::cout << "max(c, d) = " << ::max( c, d ) << std::endl;
 //     return (0);
 // }
+
+
+/**
+ *  Evaluation main
+ */
+// #include "Awesome.hpp"
+
+// int main() 
+// {
+//     Awesome a(2), b(4);
+
+//     std::cout << "Initial values: a = " << a << ", b = " << b << std::endl;
+
+//     ::swap(a, b);
+//     std::cout << "After swap: a = " << a << ", b = " << b << std::endl;
+
+//     std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
+//     std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+
+//     return (0);
+// }
+
 
 
 /**

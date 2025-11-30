@@ -6,12 +6,31 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:00:59 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/28 17:57:29 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/11/30 19:00:48 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
+/**
+ *  Evaluation main
+ */
+// #include "Awesome.hpp"
+
+// int main() 
+// {
+//     int tab[] = { 0, 1, 2, 3, 4 }; // <--- I never understood why you can't write int[] tab. Wouldn't that make more sense? //NOT ALLOWED IN C++
+//     Awesome tab2[5];
+
+//     iter<int>(tab, 5, print<int>);
+//     iter<Awesome>(tab2, 5, print<Awesome>);
+    
+//     return (0);
+// }
+
+/**
+ *  My main
+ */
 void printInt(int x) 
 {
     std::cout << x << std::endl;
