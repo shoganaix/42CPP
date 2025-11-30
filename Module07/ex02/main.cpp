@@ -6,12 +6,73 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:58:45 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/28 19:02:31 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/11/30 18:59:54 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
+/**
+ *  Evaluation Main
+ */
+// #include <cstdlib> // for rand() and srand()
+// #include <ctime>   // for time()
+// #define MAX_VAL 750
+
+// int main(int, char**)
+// {
+//     Array<int> numbers(MAX_VAL);                // numbers is a dynamic array of MAX_VAL elements
+//     int* mirror = new int[MAX_VAL];             // mirror is a regular 'C' array used to compare
+//     srand(time(NULL));                          // filling with random
+//     for (int i = 0; i < MAX_VAL; i++)
+//     {
+//         const int value = rand();
+//         numbers[i] = value;
+//         mirror[i] = value;
+//     }
+//     //SCOPE
+//     {
+//         Array<int> tmp = numbers;               // Testing copy constructor and assignment
+//         Array<int> test(tmp);
+//     }
+
+//     for (int i = 0; i < MAX_VAL; i++)           //SHOULDNT PRINT ANYTHING IF THEY BOTH EQUAL
+//     {
+//         if (mirror[i] != numbers[i])
+//         {
+//             std::cerr << "didn't save the same value!!" << std::endl;
+//             return 1;
+//         }
+//     }
+//     try
+//     {
+//         numbers[-2] = 0;                       // Testing out of bounds
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';          // called exception
+//     }
+//     try
+//     {
+//         numbers[MAX_VAL] = 0;                 // Testing out of bounds
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';          // called exception
+//     }
+
+//     for (int i = 0; i < MAX_VAL; i++)         // Modifies all elements again (?)
+//     {
+//         numbers[i] = rand();
+//     }
+//     delete [] mirror;
+//     return 0;
+// }
+
+
+/**
+ *  My main
+ */
 int main()
 {
     try 
