@@ -6,22 +6,16 @@
 /*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 02:33:00 by usuario           #+#    #+#             */
-/*   Updated: 2025/11/30 20:58:14 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/01 16:45:21 by msoriano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span()
-{
-    this->N = 0;
-    this-> data = null;
+Span::Span(): N(0), data() {
 }
 
-Span::Span(unsigned int N1)
-{
-    this->N = N1;
-    this-> data = null;
+Span::Span(unsigned int N1) : N(N1), data() { //empty vector 
 }
 
 Span::Span(const Span &other)
@@ -52,19 +46,13 @@ void Span::addNumber(int nb)
     data.push_back(nb);
 }
 
-template <typename It> void Span::addMultipleNumbers(It begin, It end)
-{
-
-}
-
-
 int Span::shortestSpan() const
 {
     if (data.size() < 2)
         throw EmptySpan();
 
     std::vector<int> sorted = data;                     // Create copy container 
-    std::sort(sorted.begin(), sorted.end());            // Sort numerically this container
+    std::sort(sorted.begin(), sorted.end());            // Sort numerically this container // USES STD::SORT
 
     int minSpan = sorted[1] - sorted[0];                // We set minSpan to the diff between the first two nb
     for (size_t i = 1; i < sorted.size() - 1; ++i)      // We update minSpan if smaller
@@ -81,8 +69,8 @@ int Span::longestSpan() const
     if (data.size() < 2)
         throw EmptySpan();
 
-    int minVal = *std::min_element(data.begin(), data.end());
-    int maxVal = *std::max_element(data.begin(), data.end());
+    int minVal = *std::min_element(data.begin(), data.end()); // USES STD::MIN_ELEMENT
+    int maxVal = *std::max_element(data.begin(), data.end()); // USES STD:MAX_ELEMENT
 
     return (maxVal - minVal);
 }
