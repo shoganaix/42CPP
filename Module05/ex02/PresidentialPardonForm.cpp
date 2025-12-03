@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:19:04 by root              #+#    #+#             */
-/*   Updated: 2025/10/23 18:04:47 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:57:04 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ std::string PresidentialPardonForm::getTarget() const
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
     if (!this->getIsSigned())
-        throw FormNotSignedException();
+        throw formNotSignedException();
     if (executor.getGrade() > this->getExecgrade())
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::gradeTooLowException();
 	    std::cout << "Bureaucrat \033[33m" << executor.getName() << "\033[0m informs that \033[33m" << this->target << " \033[0m has been pardoned by Zaphod Beeblebrox"<< std::endl;        
 }
 

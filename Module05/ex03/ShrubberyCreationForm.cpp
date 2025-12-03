@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:19:04 by root              #+#    #+#             */
-/*   Updated: 2025/10/23 18:00:25 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:57:04 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
     std::ofstream	outfile;
 
     if (!this->getIsSigned())
-        throw FormNotSignedException();
+        throw formNotSignedException();
     if (executor.getGrade() > this->getExecgrade()){
-        throw Bureaucrat::GradeTooLowException(); }
+        throw Bureaucrat::gradeTooLowException(); }
 
 	outfile.open((this->target_file + "_shrubbery").c_str());
 	if (outfile.fail())

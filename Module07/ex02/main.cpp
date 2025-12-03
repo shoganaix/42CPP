@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:58:45 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/30 19:00:55 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/04 00:39:13 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ int main()
         std::cout << arrInt[10] << std::endl; // should throw
 
     } 
-    catch (Array<int>::IndexOutOfRange &e) 
+    catch (Array<int>::indexOutOfRange &e) 
     {
         std::cout << e.what() << std::endl;
     }

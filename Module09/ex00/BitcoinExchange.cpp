@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:58:20 by msoriano          #+#    #+#             */
-/*   Updated: 2025/12/03 17:25:46 by usuario          ###   ########.fr       */
+/*   Updated: 2025/12/03 18:55:32 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void BitcoinExchange::loadDatabase(const std::string &filename)
     std::ifstream file(filename.c_str());
 
     if (!file.is_open())
-        throw FileNotFound();
+        throw fileNotFound();
     
     std::string line;
 

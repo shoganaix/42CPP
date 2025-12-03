@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:24 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/23 18:04:44 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:57:04 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,18 @@ class Aform
         void beExecuted(Bureaucrat const &bureaucrat);
         virtual void execute(Bureaucrat const &executor) const = 0;
 
-        class FormGradeTooHighException : public std::exception 
+        class formgradeTooHighException : public std::exception 
         {
             public:
                 const char* what() const throw();
         };
 
-        class FormGradeTooLowException : public std::exception
+        class formgradeTooLowException : public std::exception
         {
             public:
                 const char* what() const throw();
         };
-        class FormNotSignedException : public std::exception
+        class formNotSignedException : public std::exception
         {
             public:
                 const char* what() const throw();

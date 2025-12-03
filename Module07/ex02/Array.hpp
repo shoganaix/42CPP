@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 17:59:11 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/28 18:55:46 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:58:12 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ template <typename T> class Array
         
         unsigned int size() const;
         
-        class IndexOutOfRange : public std::exception
+        class indexOutOfRange : public std::exception
         {
             public:
                 const char *what() const throw();

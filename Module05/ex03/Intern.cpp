@@ -42,7 +42,7 @@ AForm *Intern::makeForm(std::string const &name, std::string const &target)
 	if (!new_form)
     {
 		std::cout << "Intern \033[1;31mcouldn't\033[0m create form: \033[33m" << name << "\033[0m" << std::endl;
-		throw (AForm::FormInvalidException());
+		throw (AForm::formInvalidException());
     }
 	else
 		std::cout << "Intern creates form: \033[33m" << new_form->getName() << "\033[0m" << std::endl;

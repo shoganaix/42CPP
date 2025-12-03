@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     std::cout << "Bureaucrat Constructor() called" << std::endl;
     if (grade < 1)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     else if (grade > 150)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade = grade;
     std::cout << "\033[32m" << name << "\033[0m is born" << std::endl;
 }
@@ -69,23 +69,23 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::setGrade(int grade)
 {
     if (grade < 1)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     else if (grade > 150)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade = grade;
 }
 
 void Bureaucrat::increment()
 {
     if (this->grade <= 1)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade--;
 
 }
 void Bureaucrat::decrement()
 {
     if (this->grade >= 150)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     this->grade++;
 }
 
@@ -101,16 +101,16 @@ void Bureaucrat::executeForm(Aform &form)
     else
     {
         std::cout << "Bureaucrat \033[33m" << this->name << "\033[1;31m couldn't\033[0m execute \033[33m" << form.getName() << "\033[0m because \033[33mtheir grade is too low\033[0m"  << std::endl;
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     }
 }
 
-char const *Bureaucrat::GradeTooHighException::what() const throw()
+char const *Bureaucrat::gradeTooHighException::what() const throw()
 {
     return ("\033[31m[Bureaucrat] Bureaucrat grade is too high!\033[0m");
 }
 
-char const *Bureaucrat::GradeTooLowException::what() const throw()
+char const *Bureaucrat::gradeTooLowException::what() const throw()
 {
     return ("\033[31m[Bureaucrat] Bureaucrat grade is too low!\033[0m");
 }

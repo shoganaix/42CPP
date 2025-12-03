@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:20 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/23 18:04:43 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:57:04 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Aform::Aform(): name(), is_signed(false), sign_grade(150), exec_grade(150)
 Aform::Aform(std::string const name, bool i_signed, int const s_grade, int const e_grade): name(name), is_signed(i_signed), sign_grade(s_grade), exec_grade(e_grade)
 {
     if (this->exec_grade > 150 || this->sign_grade > 150)
-        throw FormGradeTooHighException();
+        throw formgradeTooHighException();
     if (this->exec_grade < 1 || this->sign_grade < 1)
-        throw FormGradeTooLowException();
+        throw formgradeTooLowException();
     std::cout << "Aform Constructor called" << std::endl;
 }
 
@@ -80,7 +80,7 @@ void Aform::beSigned(Bureaucrat const &bureaucrat)
     else
     {
         std::cout << "Bureaucrat \033[33m" << bureaucrat.getName() <<"\033[1;31m couldn't\033[0m sign " << "\033[33m" << this->name << "\033[0m because \033[33mtheir grade is too low\033[0m" << std::endl;
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::gradeTooLowException();
     }
 }
 
@@ -94,26 +94,26 @@ void Aform::beExecuted(Bureaucrat const &bureaucrat)
     else if(this->is_signed == false)
     {
         std::cout << "\033[33m" << this->name << "\033[0m is not signed" << std::endl;
-        throw FormNotSignedException();
+        throw formNotSignedException();
     }
     else
     {
         std::cout << "Bureaucrat \033[33m" << bureaucrat.getName() <<"\033[1;31m couldn't\033[0m execute " << "\033[33m" << this->name << "\033[0m because \033[33mtheir grade is too low\033[0m" << std::endl;
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::gradeTooLowException();
     }
 }
 
-char const *Aform::FormGradeTooHighException::what() const throw()
+char const *Aform::formgradeTooHighException::what() const throw()
 {
     return ("\033[31m[Form] Grade too high! Grade cannot be above 1.\033[0m");
 }
 
-char const *Aform::FormGradeTooLowException::what() const throw()
+char const *Aform::formgradeTooLowException::what() const throw()
 {
     return ("\033[31m[Form] Grade too low! Grade cannot be below 150.\033[0m");
 }
 
-char const *Aform::FormNotSignedException::what() const throw()
+char const *Aform::formNotSignedException::what() const throw()
 {
     return ("\033[31m[Form] Cannot execute because the form is not signed!\033[0m");
 }

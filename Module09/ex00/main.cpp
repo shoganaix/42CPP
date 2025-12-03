@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:55:58 by msoriano          #+#    #+#             */
-/*   Updated: 2025/12/03 17:24:07 by usuario          ###   ########.fr       */
+/*   Updated: 2025/12/03 19:00:00 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int main(int argc, char **argv)
         std::ifstream infile(argv[1]);
         if (!infile.is_open())
         {
-            std::cerr << "\033[31m[Error]:\033[0m Could not open input file" << std::endl;
+            throw fileNotFound();
+            //std::cerr << "\033[31m[Error]:\033[0m Could not open input file" << std::endl;
             return (1);
         }
 

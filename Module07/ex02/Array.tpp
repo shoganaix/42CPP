@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 18:05:54 by msoriano          #+#    #+#             */
-/*   Updated: 2025/11/28 18:53:39 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:58:12 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ template <typename T>
 T &Array<T>::operator[](unsigned int index)
 {
     if (index >= this->array_size)
-        throw IndexOutOfRange();
+        throw indexOutOfRange();
     return (this->array[index]);
 }
 
@@ -71,7 +71,7 @@ template <typename T>
 const T &Array<T>::operator[](unsigned int index) const
 {
     if (index >= this->array_size)
-        throw IndexOutOfRange();
+        throw indexOutOfRange();
     return (this->array[index]);
 }
 
@@ -83,7 +83,7 @@ unsigned int Array<T>::size() const
 }
 
 template <typename T> 
-const char *Array<T>::IndexOutOfRange::what() const throw() 
+const char *Array<T>::indexOutOfRange::what() const throw() 
 {
   return ("[EXCEPTION] Array index out of bounds");
 }

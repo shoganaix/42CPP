@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 02:33:00 by usuario           #+#    #+#             */
-/*   Updated: 2025/12/01 16:45:21 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:59:02 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ Span &Span::operator=(const Span &other)
 void Span::addNumber(int nb)
 {
     if (data.size() >= N)
-        throw FullSpan();
+        throw fullSpan();
     data.push_back(nb);
 }
 
 int Span::shortestSpan() const
 {
     if (data.size() < 2)
-        throw EmptySpan();
+        throw emptySpan();
 
     std::vector<int> sorted = data;                     // Create copy container 
     std::sort(sorted.begin(), sorted.end());            // Sort numerically this container // USES STD::SORT
@@ -67,7 +67,7 @@ int Span::shortestSpan() const
 int Span::longestSpan() const
 {
     if (data.size() < 2)
-        throw EmptySpan();
+        throw emptySpan();
 
     int minVal = *std::min_element(data.begin(), data.end()); // USES STD::MIN_ELEMENT
     int maxVal = *std::max_element(data.begin(), data.end()); // USES STD:MAX_ELEMENT

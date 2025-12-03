@@ -22,9 +22,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
     std::cout << "Bureaucrat Constructor() called" << std::endl;
     if (grade < 1)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     else if (grade > 150)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade = grade;
     std::cout << "\033[33m" << name << "\033[0m is born" << std::endl;
 }
@@ -70,23 +70,23 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::setGrade(int grade)
 {
     if (grade < 1)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     else if (grade > 150)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade = grade;
 }
 
 void Bureaucrat::increment()
 {
     if (this->grade <= 1)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     this->grade--;
 
 }
 void Bureaucrat::decrement()
 {
     if (this->grade >= 150)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     this->grade++;
 }
 
@@ -95,12 +95,12 @@ void Bureaucrat::signForm(Form &form)
     form.beSigned(*this);
 }
 
-char const	*Bureaucrat::GradeTooHighException::what() const throw()
+char const	*Bureaucrat::gradeTooHighException::what() const throw()
 {
     return ("\033[31m[Bureaucrat] Grade too high!\033[0m");
 }
 
-char const	*Bureaucrat::GradeTooLowException::what() const throw()
+char const	*Bureaucrat::gradeTooLowException::what() const throw()
 {
     return ("\033[31m[Bureaucrat] Grade too low!\033[0m");
 }

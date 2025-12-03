@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msoriano <msoriano@student.42.fr>          +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 02:32:57 by usuario           #+#    #+#             */
-/*   Updated: 2025/12/01 16:45:22 by msoriano         ###   ########.fr       */
+/*   Updated: 2025/12/03 18:59:02 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class Span
 
         void addNumber(int nb);
         
-        class FullSpan : public std::exception
+        class fullSpan : public std::exception
         {
             public:
                 const char *what() const throw() 
@@ -48,7 +48,7 @@ class Span
                 }
         };
         
-        class EmptySpan : public std::exception
+        class emptySpan : public std::exception
         {
             public:
                 const char *what() const throw() 
@@ -75,7 +75,7 @@ class Span
             for (; begin != end; ++begin) //needs the fisr  otherwise loop breaks
             {
                 if (data.size() >= N)
-                    throw FullSpan();
+                    throw fullSpan();
                 data.push_back(*begin);
             }
         }

@@ -6,7 +6,7 @@
 /*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 16:58:33 by msoriano          #+#    #+#             */
-/*   Updated: 2025/12/03 17:00:42 by usuario          ###   ########.fr       */
+/*   Updated: 2025/12/03 18:55:32 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 --------------------------------------------------------------------------
 * WE USE MAP ON THIS ONE:
     -Sorted data stucture
-    -With key AND value
+    -With key (date) AND value (value)
 --------------------------------------------------------------------------
 
                             WHAT IS CSV FORMAT?
@@ -31,9 +31,8 @@
 #ifndef BITCOINEXCHANGE_HPP
 #define BITCOINEXCHANGE_HPP
 
-#include <iostream>
-#include <algorithm>
-#include <exception>
+#include <iostream>     // std::cout
+#include <exception>    // std::exception
 #include <map>
 
 #include <fstream>      // std::ifstream
@@ -47,27 +46,26 @@ class BitcoinExchange
     private:
         std::map <std::string, double> database;
         void loadDatabase(const std::string &filename);      
-        
-        // "Your program must take a file as an argument"
-        BitcoinExchange(); // So we define default constructor private
+
     public:
+        BitcoinExchange();
         BitcoinExchange(const char *file);
         BitcoinExchange(const BitcoinExchange &other);
         BitcoinExchange &operator=(const BitcoinExchange &other);
         ~BitcoinExchange();
-
-        class FileNotFound : public std::exception
-        {
-            public:
-                const char *what() const throw()
-                {
-                    return ("\033[31m[EXCEPTION]\033[0m Could not open CSV file");
-                }
-        };
                     
         double getValue(const std::string &date) const;
         bool validDate(const std::string &date) const;
         bool validValue(const std::string &valueStr, double &value) const;
+};
+
+class fileNotFound : public std::exception
+{
+    public:
+        const char *what() const throw()
+        {
+            return ("\033[31m[EXCEPTION]\033[0m Could not open CSV file");
+        }
 };
 
 #endif

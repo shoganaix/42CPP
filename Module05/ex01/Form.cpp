@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:20 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/23 18:02:34 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:56:06 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Form::Form(): name(), is_signed(false), sign_grade(150), exec_grade(150)
 Form::Form(std::string const name, bool i_signed, int const s_grade, int const e_grade): name(name), is_signed(i_signed), sign_grade(s_grade), exec_grade(e_grade)
 {
     if (this->exec_grade > 150 || this->sign_grade > 150)
-        throw GradeTooHighException();
+        throw gradeTooHighException();
     if (this->exec_grade < 1 || this->sign_grade < 1)
-        throw GradeTooLowException();
+        throw gradeTooLowException();
     std::cout << "Form Constructor called" << std::endl;
     std::cout << "\033[33m" << name << " form\033[0m created" << std::endl;
 }
@@ -81,17 +81,17 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
     else
     {
         std::cout << "Bureaucrat \033[33m" << bureaucrat.getName() <<"\033[0m couldn't sign " << "\033[33m" << this->name << "\033[0m form because \033[33mtheir grade is too low\033[0m" << std::endl;
-        throw Bureaucrat::GradeTooLowException();
+        throw Bureaucrat::gradeTooLowException();
     }
 }
 
 
-char const	*Form::GradeTooHighException::what() const throw()
+char const	*Form::gradeTooHighException::what() const throw()
 {
     return ("\033[31m[Form] Grade too high!\033[0m");
 }
 
-char const	*Form::GradeTooLowException::what() const throw()
+char const	*Form::gradeTooLowException::what() const throw()
 {
     return ("\033[31m[Form] Grade too low!\033[0m");
 }

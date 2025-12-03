@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: usuario <usuario@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 00:37:24 by usuario           #+#    #+#             */
-/*   Updated: 2025/10/23 17:49:56 by root             ###   ########.fr       */
+/*   Updated: 2025/12/03 18:57:19 by usuario          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,23 +46,23 @@ class AForm
         static AForm *makeForm(std::string const &name, std::string const &target);
 
 
-        class FormGradeTooHighException : public std::exception 
+        class formgradeTooHighException : public std::exception 
         {
             public:
                 const char* what() const throw();
         };
 
-        class FormGradeTooLowException : public std::exception
+        class formgradeTooLowException : public std::exception
         {
             public:
                 const char* what() const throw();
         };
-        class FormNotSignedException : public std::exception
+        class formNotSignedException : public std::exception
         {
             public:
                 const char* what() const throw();
         };
-        class FormInvalidException : public std::exception
+        class formInvalidException : public std::exception
         {
             public:
                 const char* what() const throw();
