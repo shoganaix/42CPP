@@ -11,7 +11,7 @@ BLUE	 = \033[1;34m
 RESET	 = \033[0m
 
 
-SRCS	 = main.cpp
+SRCS	 = main.cpp BitcoinExchange.cpp
 OBJS	 = $(SRCS:.cpp=.o)
 
 RM		 = /bin/rm -rf
