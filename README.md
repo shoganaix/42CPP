@@ -149,5 +149,5 @@ make
 </p>
 
 <p align="center">
-<sub>NO BONUSES</sub>
+<sub>NO BONUS</sub>
  </p>
