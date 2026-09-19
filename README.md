@@ -124,8 +124,7 @@ no Containers (vector/list/map, and so forth) and no Algorithm (<algorithm> head
 1. Clone this repository:
 
 ```
-git clone github.com/shoganaix/CPP
-
+git clone github.com/shoganaix/42CPP
 ```
 
 2. Navigate to the desired module/exercise directory
